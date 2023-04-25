@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
 import { getArticles, getArticleBySlug } from '@/libs/client'
 import type { Article } from '@/types/article'
 

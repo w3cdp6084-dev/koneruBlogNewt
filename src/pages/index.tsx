@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
 import { getArticles } from '@/libs/client'
 import type { Article } from '@/types/article'
+import HamburgerMenu from '../component/HamburgerMenu';
 
 export default function Home({ articles }: { articles: Article[] }) {
   return (
@@ -21,6 +22,7 @@ export default function Home({ articles }: { articles: Article[] }) {
             )
           })}
         </ul>
+        <HamburgerMenu />
       </main>
     </>
   )

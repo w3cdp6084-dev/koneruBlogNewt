@@ -1,0 +1,35 @@
+.hamburger {
+ display: inline-block;
+ cursor: pointer;
+ font-size: 24px;
+}
+.hamburger span{
+ display: inline-block;
+}
+
+.menu {
+ position: absolute;
+ top: 50px;
+ left: 0;
+ width: 200px; // バルーンの幅を設定
+ padding: 15px; // バルーン内の余白を設定
+ background-color: rgba(0, 0, 0, 0.8);
+ border-radius: 10px; // バルーンの角を丸くする
+ opacity: 0;
+ visibility: hidden;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); // バルーンに影を追加
+ transform-origin: top center; // メニューのアニメーションの基点を変更
+}
+
+.menu ul {
+ list-style-type: none;
+ color: #fff;
+ font-size: 18px;
+ padding: 0; // リストの余白を削除
+}
+
+.menu ul li {
+ margin: 10px 0;
+ cursor: pointer;
+}
+
