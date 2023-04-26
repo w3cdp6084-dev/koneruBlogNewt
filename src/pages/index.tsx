@@ -5,14 +5,36 @@ import { getArticles,getCategories } from '@/libs/client'
 import type { Article,Category } from '@/types/article'
 import HamburgerMenu from '../component/HamburgerMenu';
 import { format } from 'date-fns';
+import { useRef, useEffect } from 'react';
 
 export default function Home({ articles, categories }: { articles: Article[], categories: Category[] }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    async function loadGsapAndDraggable() {
+      const { gsap } = await import('gsap');
+      const { Draggable } = await import('gsap/Draggable');
+
+      gsap.registerPlugin(Draggable);
+
+      if (containerRef.current) {
+        Draggable.create(containerRef.current, {
+          type: 'x,y',
+          edgeResistance: 0.8,
+          throwProps: true,
+        });
+      }
+    }
+
+    loadGsapAndDraggable();
+  }, []);
   return (
     <>
-      <Head>
-        <title>Newt・Next.jsブログ</title>
-        <meta name="description" content="NewtとNext.jsを利用したブログです" />
-      </Head>
+    <Head>
+      <title>Newt・Next.jsブログ</title>
+      <meta name="description" content="NewtとNext.jsを利用したブログです" />
+    </Head>
+    <div ref={containerRef}>
       <main className={styles.main}>
         <ul className={styles.cardBox}>
           {articles.map((article) => {
@@ -41,6 +63,7 @@ export default function Home({ articles, categories }: { articles: Article[], ca
         </ul>
         <HamburgerMenu />
       </main>
+      </div>
     </>
   )
 }
