@@ -1,5 +1,7 @@
 import '@/styles/globals.scss'
 import '../styles/reset.css';
+import 'swiper/swiper.css';
+
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
