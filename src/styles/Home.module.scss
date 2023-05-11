@@ -1,10 +1,4 @@
-.main {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 .description {
   display: inherit;
@@ -226,11 +220,6 @@
   }
 }
 // 後ほど分離する
-.swiperContainer {
-  width: 100%;
-  padding: 50px 0;
-}
-
 .card-grid {
   display: flex;
   justify-content: center;
@@ -242,13 +231,14 @@
 
 .cardOuter {
   position: relative;
-  margin: 16px;
+
   cursor: pointer;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-
+  height: max-content;
+  width: 33%;
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
@@ -258,6 +248,7 @@
 .cardInner {
   position: relative;
   overflow: hidden;
+  padding: 16px;
   img {
     width: 100%;
     height: auto;
@@ -267,12 +258,12 @@
 }
 
 .cardOverlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
   padding: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255);
   h3 {
     margin-top: 0;
   }
@@ -290,5 +281,7 @@
   opacity: 1;
 }
 
-
+.jscover{
+  box-sizing: border-box;
+}
 
